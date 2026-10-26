@@ -1,6 +1,8 @@
-# Du lieu goc va du lieu sinh ra — khong commit
+# Du lieu goc (qua nang) khong commit; du lieu da xu ly (csv) duoc commit theo yeu cau mon
 data/raw/
-data/processed/
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/*.csv
 *.csv.gz
 
 # Python
