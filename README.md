@@ -1,6 +1,6 @@
 # DTA301: Safety-Aware Pre-Flight Energy Feasibility for Delivery UAV
 
-Làm lại từ đầu. Bản cũ vẫn còn ở nhánh `main`.
+Làm lại từ đầu. Bản cũ nằm trong lịch sử git (commit `477f799`).
 
 ## Dữ liệu
 
@@ -22,7 +22,7 @@ reports/       bảng, hình, nhật ký loại trừ
 
 ## Tiến độ
 
-- [x] Bước 1: xem dữ liệu (`notebooks/buoc1_xem_du_lieu.py`)
-- [x] Bước 2: lọc chuyến bay (`notebooks/buoc2_loc_chuyen.py`)
+- [ ] Bước 1: xem dữ liệu
+- [ ] Bước 2: lọc chuyến bay
 - [ ] Bước 3: tính năng lượng từng chuyến
 - [ ] Bước 4: bảng 1 dòng = 1 chuyến
