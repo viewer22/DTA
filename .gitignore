@@ -16,3 +16,10 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Paper working files and render previews
+/reports/paper/work/
+
+# Word temporary files
+~$*
+~WRL*.tmp
