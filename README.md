@@ -38,7 +38,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Chạy các notebook trong `notebooks/` theo đúng thứ tự số (01 → 05). Seed cố định: 301. Notebook 03–05 chỉ cần `data/processed/flight_level.csv` (đã có trong repo), nên chạy được ngay mà không cần tải dữ liệu thô.
+Chạy các notebook trong `notebooks/` theo đúng thứ tự số (01 → 06). Seed cố định: 301. Notebook 04–05 chỉ cần `data/processed/flight_level.csv` (đã có trong repo), nên chạy được ngay mà không cần tải dữ liệu thô; notebook 03 và 06 cần thêm `data/raw/flights.csv` để tính cự ly tuyến.
 
 ## Cấu trúc
 
@@ -51,6 +51,7 @@ notebooks/
   03_baseline_model.ipynb
   04_experiment_evaluation.ipynb
   05_decision_layer.ipynb       lớp quyết định FLY / CONDITIONAL / NO-FLY
+  06_m1_evaluation_final_figures.ipynb   đánh giá M1 (hệ số, actual vs predicted, phần dư, R6), bộ hình final_*.png cho paper và slide
 src/               hàm dùng lại giữa các notebook
 reports/           bảng kết quả, nhật ký loại trừ
 reports/figures/   hình
@@ -69,7 +70,7 @@ slides/            slide thuyết trình
 
 ## Khai báo
 
-**Reproducibility Statement.** Tải `parameters.csv` và `flights.csv` từ KiltHub (DOI 10.1184/R1/12683453, CC BY 4.0) vào `data/raw/`, `pip install -r requirements.txt`, rồi chạy notebook 01 → 05. Seed 301 cho mọi cách chia và kịch bản. Bảng kết quả: `reports/baseline_results.csv`, `experiment_results.csv`, `decision_results.csv`, `decision_robustness.csv`, `exclusion_log.csv`; hình: `reports/figures/`.
+**Reproducibility Statement.** Tải `parameters.csv` và `flights.csv` từ KiltHub (DOI 10.1184/R1/12683453, CC BY 4.0) vào `data/raw/`, `pip install -r requirements.txt`, rồi chạy notebook 01 → 06 (`python src/make_pipeline_fig.py` vẽ sơ đồ quy trình). Seed 301 cho mọi cách chia và kịch bản. Bảng kết quả: `reports/baseline_results.csv`, `experiment_results.csv`, `decision_results.csv`, `decision_robustness.csv`, `exclusion_log.csv`, `final_model_table.csv`, `final_numbers.json`; hình: `reports/figures/` (paper và slide dùng chung `final_*.png`). Báo cáo D1–D5: `reports/deliverables/`.
 
 **Giả định ở notebook 05.** Trạng thái pin (SoC, SoH, nhiệt độ) là mô phỏng; năng lượng chuyến bay là đo thật. Pin 99,9 Wh (TB47D), SoC ~ U(0,15; 1), SoH ~ U(0,7; 1), T ~ U(−10; 40) °C, dự trữ hạ cánh 20% SoC. Kết quả là so sánh tương đối giữa các luật, không phải chứng nhận an toàn bay.
 
